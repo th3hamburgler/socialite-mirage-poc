@@ -33,4 +33,5 @@ export default class PageModel extends Model {
   // Relationships
 
   @hasMany("tag") tags;
+  @hasMany("favourite") favourites;
 }

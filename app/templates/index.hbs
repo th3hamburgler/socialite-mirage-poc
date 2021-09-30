@@ -17,6 +17,10 @@
     {{/each}}
   </ul>
 
+  <form {{on "submit" (fn this.addPost this.postTitle)}} novalidate>
+    <Input @value={{this.postTitle}} placeholder="Post Title" />
+    <button type="submit">Add Post</button>
+  </form>
   <h2>Pages {{this.model.pages.length}}</h2>
 
   <p>Querying pages and returning associated tags</p>
@@ -26,6 +30,26 @@
       <li>
         {{page.title}}:
         {{#each page.tags as |tag|}}
+          [{{tag.name}}]
+        {{/each}}
+      </li>
+    {{/each}}
+  </ul>
+
+  <form {{on "submit" (fn this.addPage this.pageTitle)}} novalidate>
+    <Input @value={{this.pageTitle}} placeholder="Page Title" />
+    <button type="submit">Add Page</button>
+  </form>
+
+  <h2>Favourites {{this.model.favourites.length}}</h2>
+
+  <p>Querying favourites and returning associated pages and tags</p>
+
+  <ul>
+    {{#each this.model.favourites as |favourite|}}
+      <li>
+        {{favourite.pages.firstObject.title}}:
+        {{#each favourite.pages.firstObject.tags as |tag|}}
           [{{tag.name}}]
         {{/each}}
       </li>

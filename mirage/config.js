@@ -51,4 +51,11 @@ export default function () {
   this.put("/documents/posts/:id");
   this.patch("/documents/posts/:id");
   this.del("/documents/posts/:id");
+
+  this.get("/interactions/favourites");
+  this.post("/interactions/favourites");
+  this.get("/interactions/favourites/:id");
+  this.put("/interactions/favourites/:id");
+  this.patch("/interactions/favourites/:id");
+  this.del("/interactions/favourites/:id");
 }
