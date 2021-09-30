@@ -35,4 +35,5 @@ export default class PostModel extends Document {
 
   @hasMany("tag") tags;
   @hasMany("favourite", { inverse: "documents" }) favourites;
+  @hasMany("like", { inverse: "documents" }) likes;
 }

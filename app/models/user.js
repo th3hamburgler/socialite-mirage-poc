@@ -15,5 +15,6 @@ export default class UserModel extends Model {
   // Relationships
 
   @hasMany("favourite") favourites;
+  @hasMany("like") likes;
   @hasMany("health-target") healthTargets;
 }

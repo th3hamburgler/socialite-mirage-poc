@@ -11,6 +11,9 @@ export default class IndexRoute extends Route {
       favourites: this.store.findAll("favourite", {
         include: "documents.tags",
       }),
+      likes: this.store.findAll("like", {
+        include: "documents.tags",
+      }),
       healthTargets: this.store.findAll("health-target", {
         include: "user",
       }),

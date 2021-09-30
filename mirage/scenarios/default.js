@@ -14,5 +14,8 @@ export default function (server) {
   server.createList("favourite", 4, "withPage", { user });
   server.createList("favourite", 3, "withPost", { user });
 
+  server.createList("like", 6, "withPage", { user });
+  server.createList("like", 2, "withPost", { user });
+
   server.createList("health-target", 8, { user });
 }

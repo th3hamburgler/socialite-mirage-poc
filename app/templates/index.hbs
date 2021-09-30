@@ -79,6 +79,21 @@
     {{/each}}
   </ul>
 
+  <h2>Likes {{this.model.likes.length}}</h2>
+
+  <p>Querying likes and returning associated pages and tags</p>
+
+  <ul>
+    {{#each this.model.likes as |like|}}
+      <li>
+        {{like.documents.firstObject.title}}:
+        {{#each like.documents.firstObject.tags as |tag|}}
+          [{{tag.name}}]
+        {{/each}}
+      </li>
+    {{/each}}
+  </ul>
+
   <h2>Health Targets {{this.model.healthTargets.length}}</h2>
 
   <p>Querying healthTargets and returning associated user</p>

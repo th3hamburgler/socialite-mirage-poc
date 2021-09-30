@@ -59,6 +59,13 @@ export default function () {
   this.patch("/interactions/favourites/:id");
   this.del("/interactions/favourites/:id");
 
+  this.get("/interactions/likes");
+  this.post("/interactions/likes");
+  this.get("/interactions/likes/:id");
+  this.put("/interactions/likes/:id");
+  this.patch("/interactions/likes/:id");
+  this.del("/interactions/likes/:id");
+
   this.get("/interactions/health-targets");
   this.post("/interactions/health-targets");
   this.get("/interactions/health-targets/:id");
