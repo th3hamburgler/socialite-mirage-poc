@@ -58,4 +58,11 @@ export default function () {
   this.put("/interactions/favourites/:id");
   this.patch("/interactions/favourites/:id");
   this.del("/interactions/favourites/:id");
+
+  this.get("/interactions/health-targets");
+  this.post("/interactions/health-targets");
+  this.get("/interactions/health-targets/:id");
+  this.put("/interactions/health-targets/:id");
+  this.patch("/interactions/health-targets/:id");
+  this.del("/interactions/health-targets/:id");
 }

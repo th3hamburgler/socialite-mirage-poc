@@ -78,4 +78,20 @@
       </li>
     {{/each}}
   </ul>
+
+  <h2>Health Targets {{this.model.healthTargets.length}}</h2>
+
+  <p>Querying healthTargets and returning associated user</p>
+
+  <ul>
+    {{#each this.model.healthTargets as |target|}}
+      <li>
+        {{target.metadata.metric}}:
+        {{target.value}}
+        for
+        {{target.user.firstName}}
+        {{target.user.lastName}}
+      </li>
+    {{/each}}
+  </ul>
 </main>

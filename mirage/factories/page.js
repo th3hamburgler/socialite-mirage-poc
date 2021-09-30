@@ -22,7 +22,7 @@ export default Factory.extend({
   blocks: function () {
     return [];
   },
-  meta: function () {
+  metadata: function () {
     return {};
   },
   createdAt: function () {

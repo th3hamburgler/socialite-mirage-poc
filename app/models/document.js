@@ -24,7 +24,7 @@ export default class DocumentModel extends Model {
       return {};
     },
   })
-  meta;
+  metadata;
   @attr("date") createdAt;
   @attr("date") updatedAt;
   @attr("date") publishedAt;

@@ -25,7 +25,7 @@ export default class PostModel extends Document {
       return {};
     },
   })
-  meta;
+  metadata;
   @attr("date") createdAt;
   @attr("date") updatedAt;
   @attr("date") publishedAt;

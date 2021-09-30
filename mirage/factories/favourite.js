@@ -14,7 +14,7 @@ export default Factory.extend({
     return faker.lorem.word();
   },
 
-  meta() {
+  metadata() {
     return {};
   },
 
