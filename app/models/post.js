@@ -1,6 +1,7 @@
-import Model, { attr, hasMany } from "@ember-data/model";
+import { attr, hasMany } from "@ember-data/model";
+import Document from "./document";
 
-export default class PostModel extends Model {
+export default class PostModel extends Document {
   // Attributes
 
   @attr("string") title;
@@ -33,5 +34,5 @@ export default class PostModel extends Model {
   // Relationships
 
   @hasMany("tag") tags;
-  @hasMany("favourite") favourites;
+  @hasMany("favourite", { inverse: "documents" }) favourites;
 }

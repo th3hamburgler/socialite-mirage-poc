@@ -11,6 +11,7 @@ export default class FavouriteModel extends Model {
   // Relationships
 
   @belongsTo("user") user;
-  @hasMany("post") posts;
-  @hasMany("page") pages;
+  @hasMany("document", { polymorphic: true }) documents;
+  // @hasMany("post") posts;
+  // @hasMany("page") pages;
 }

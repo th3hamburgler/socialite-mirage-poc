@@ -36,7 +36,7 @@ export default Factory.extend({
     afterCreate(page, server) {
       const pages = server.schema.pages.all().models;
 
-      page.pages = [faker.random.arrayElement(pages)];
+      page.documents = [faker.random.arrayElement(pages)];
 
       page.save();
     },
@@ -46,7 +46,7 @@ export default Factory.extend({
     afterCreate(post, server) {
       const posts = server.schema.posts.all().models;
 
-      post.posts = [faker.random.arrayElement(posts)];
+      post.documents = [faker.random.arrayElement(posts)];
 
       post.save();
     },

@@ -4,6 +4,7 @@ export default Model.extend({
   // Relationships
 
   user: belongsTo("user"),
-  posts: hasMany("post"),
-  pages: hasMany("page"),
+  documents: hasMany("document", { polymorphic: true }),
+  // posts: hasMany("post"),
+  // pages: hasMany("page"),
 });

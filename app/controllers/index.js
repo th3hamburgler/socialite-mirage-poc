@@ -47,13 +47,10 @@ export default class IndexController extends Controller {
   }
 
   @action favourite(document) {
-    let attrs = {};
+    let attrs = {
+      documents: [document],
+    };
 
-    if (document.constructor.modelName === "post") {
-      attrs.posts = [document];
-    } else {
-      attrs.pages = [document];
-    }
     const fav = this.store.createRecord("favourite", attrs);
 
     fav.save();

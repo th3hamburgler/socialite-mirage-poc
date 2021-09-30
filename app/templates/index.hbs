@@ -13,7 +13,7 @@
         {{#each post.tags as |tag|}}
           [{{tag.name}}]
         {{/each}}
-        {{#if post.favourites.length}}
+        {{#if post.favourites.firstObject.id}}
           <button
             type="button"
             {{on "click" (fn this.unfavourite post.favourites.firstObject)}}
@@ -71,17 +71,10 @@
   <ul>
     {{#each this.model.favourites as |favourite|}}
       <li>
-        {{#if favourite.pages.length}}
-          {{favourite.pages.firstObject.title}}:
-          {{#each favourite.pages.firstObject.tags as |tag|}}
-            [{{tag.name}}]
-          {{/each}}
-        {{else}}
-          {{favourite.posts.firstObject.title}}:
-          {{#each favourite.posts.firstObject.tags as |tag|}}
-            [{{tag.name}}]
-          {{/each}}
-        {{/if}}
+        {{favourite.documents.firstObject.title}}:
+        {{#each favourite.documents.firstObject.tags as |tag|}}
+          [{{tag.name}}]
+        {{/each}}
       </li>
     {{/each}}
   </ul>

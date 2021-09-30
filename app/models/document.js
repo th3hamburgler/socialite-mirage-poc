@@ -1,7 +1,6 @@
-import { attr, hasMany } from "@ember-data/model";
-import Document from "./document";
+import Model, { attr, hasMany } from "@ember-data/model";
 
-export default class PageModel extends Document {
+export default class DocumentModel extends Model {
   // Attributes
 
   @attr("string") title;
@@ -32,7 +31,5 @@ export default class PageModel extends Document {
   @attr("date") deletedAt;
 
   // Relationships
-
-  @hasMany("tag") tags;
   @hasMany("favourite", { inverse: "documents" }) favourites;
 }
