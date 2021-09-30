@@ -1,0 +1,34 @@
+<main style="padding:24px">
+
+  <h1>Socialte API Demo</h1>
+
+  <h2>Posts {{this.model.posts.length}}</h2>
+
+  <p>Querying posts and returning associated tags</p>
+
+  <ul>
+    {{#each this.model.posts as |post|}}
+      <li>
+        {{post.title}}:
+        {{#each post.tags as |tag|}}
+          [{{tag.name}}]
+        {{/each}}
+      </li>
+    {{/each}}
+  </ul>
+
+  <h2>Pages {{this.model.pages.length}}</h2>
+
+  <p>Querying pages and returning associated tags</p>
+
+  <ul>
+    {{#each this.model.pages as |page|}}
+      <li>
+        {{page.title}}:
+        {{#each page.tags as |tag|}}
+          [{{tag.name}}]
+        {{/each}}
+      </li>
+    {{/each}}
+  </ul>
+</main>
