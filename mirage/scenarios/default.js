@@ -8,5 +8,6 @@ export default function (server) {
   server.createList("post", 10, "withTags");
   server.createList("page", 10, "withTags");
 
-  server.createList("favourite", 5, "withPage");
+  server.createList("favourite", 4, "withPage");
+  server.createList("favourite", 3, "withPost");
 }

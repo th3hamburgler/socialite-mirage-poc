@@ -41,4 +41,14 @@ export default Factory.extend({
       page.save();
     },
   }),
+
+  withPost: trait({
+    afterCreate(post, server) {
+      const posts = server.schema.posts.all().models;
+
+      post.posts = [faker.random.arrayElement(posts)];
+
+      post.save();
+    },
+  }),
 });

@@ -46,7 +46,22 @@ export default class IndexController extends Controller {
     this.postTitle = "";
   }
 
-  @action favourite() {}
+  @action favourite(document) {
+    let attrs = {};
 
-  @action unfavourite() {}
+    if (document.constructor.modelName === "post") {
+      attrs.posts = [document];
+    } else {
+      attrs.pages = [document];
+    }
+    const fav = this.store.createRecord("favourite", attrs);
+
+    fav.save();
+  }
+
+  @action unfavourite(favourite) {
+    favourite.deleteRecord();
+
+    favourite.save();
+  }
 }

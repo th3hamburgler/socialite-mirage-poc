@@ -13,6 +13,17 @@
         {{#each post.tags as |tag|}}
           [{{tag.name}}]
         {{/each}}
+        {{#if post.favourites.length}}
+          <button
+            type="button"
+            {{on "click" (fn this.unfavourite post.favourites.firstObject)}}
+          >-</button>
+        {{else}}
+          <button
+            type="button"
+            {{on "click" (fn this.favourite post)}}
+          >+</button>
+        {{/if}}
       </li>
     {{/each}}
   </ul>
@@ -21,6 +32,7 @@
     <Input @value={{this.postTitle}} placeholder="Post Title" />
     <button type="submit">Add Post</button>
   </form>
+
   <h2>Pages {{this.model.pages.length}}</h2>
 
   <p>Querying pages and returning associated tags</p>
@@ -32,6 +44,17 @@
         {{#each page.tags as |tag|}}
           [{{tag.name}}]
         {{/each}}
+        {{#if page.favourites.length}}
+          <button
+            type="button"
+            {{on "click" (fn this.unfavourite page.favourites.firstObject)}}
+          >-</button>
+        {{else}}
+          <button
+            type="button"
+            {{on "click" (fn this.favourite page)}}
+          >+</button>
+        {{/if}}
       </li>
     {{/each}}
   </ul>
@@ -48,10 +71,17 @@
   <ul>
     {{#each this.model.favourites as |favourite|}}
       <li>
-        {{favourite.pages.firstObject.title}}:
-        {{#each favourite.pages.firstObject.tags as |tag|}}
-          [{{tag.name}}]
-        {{/each}}
+        {{#if favourite.pages.length}}
+          {{favourite.pages.firstObject.title}}:
+          {{#each favourite.pages.firstObject.tags as |tag|}}
+            [{{tag.name}}]
+          {{/each}}
+        {{else}}
+          {{favourite.posts.firstObject.title}}:
+          {{#each favourite.posts.firstObject.tags as |tag|}}
+            [{{tag.name}}]
+          {{/each}}
+        {{/if}}
       </li>
     {{/each}}
   </ul>

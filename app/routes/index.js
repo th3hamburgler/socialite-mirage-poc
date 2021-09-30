@@ -6,8 +6,8 @@ export default class IndexRoute extends Route {
 
   model() {
     return {
-      posts: this.store.findAll("post", { include: "tags" }),
-      pages: this.store.findAll("page", { include: "tags" }),
+      posts: this.store.findAll("post", { include: "favourites,tags" }),
+      pages: this.store.findAll("page", { include: "favourites,tags" }),
       favourites: this.store.findAll("favourite", { include: "pages.tags" }),
     };
   }
