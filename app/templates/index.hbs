@@ -84,10 +84,10 @@
   <p>Querying likes and returning associated pages and tags</p>
 
   <ul>
-    {{#each this.model.likes as |like|}}
+    {{#each this.model.likes as |favourite|}}
       <li>
-        {{like.documents.firstObject.title}}:
-        {{#each like.documents.firstObject.tags as |tag|}}
+        {{favourite.documents.firstObject.title}}:
+        {{#each favourite.documents.firstObject.tags as |tag|}}
           [{{tag.name}}]
         {{/each}}
       </li>
